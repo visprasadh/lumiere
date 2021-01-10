@@ -24,7 +24,7 @@ class Article extends Component {
 
   render() {
     return (
-      <div className={styles.Wrapper}>
+      <div className={this.state.isLight ? styles.Light : styles.Dark}>
         <div className={styles.Header}>
           <h1 className={styles.SectionTitle}>Riviera</h1>
           <h1 className={styles.SectionTitleSupplement}>by Lumiere</h1>
@@ -42,6 +42,7 @@ class Article extends Component {
               toggleTheme={this.toggleThemeHandler}
               toggleFont={this.toggleFontHandler}
               isSerif={this.state.isSerif}
+              isLight={this.state.isLight}
             />
             <div className={styles.ArticleBody}>
               <img src="https://images.unsplash.com/photo-1554554497-0095c34db3ec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1782&q=80"></img>

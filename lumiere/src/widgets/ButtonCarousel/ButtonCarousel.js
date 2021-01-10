@@ -1,13 +1,20 @@
 import styles from "./ButtonCarousel.module.sass";
-import { Sun } from "react-feather";
+import { Sun, Moon } from "react-feather";
 
 const ButtonCarousel = (props) => {
   return (
     <div className={styles.ButtonCarousel}>
       <button className={styles.ThemeButton} onClick={props.toggleTheme}>
-        <Sun color="black" />
+        {props.isLight ? <Moon color="black" /> : <Sun color="white" />}
       </button>
-      <button className={`${styles.FontButton} ${props.isSerif ? styles.Sans : styles.Serif}`} onClick={props.toggleFont}>Aa</button>
+      <button
+        className={`${styles.FontButton} ${
+          props.isSerif ? styles.Sans : styles.Serif
+        } ${props.isLight ? styles.Light : styles.Dark}`} 
+        onClick={props.toggleFont}
+      >
+        Aa
+      </button>
     </div>
   );
 };
